@@ -10,6 +10,6 @@ menuBtn.onclick = function(){
 
 menuItems.onclick = function(){
     menuItems.classList.remove('show');
-    
+    menuBtn.classList.remove('close');
 }
 
