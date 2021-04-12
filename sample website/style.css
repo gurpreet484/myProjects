@@ -1,0 +1,337 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Source Serif Pro', serif;
+    scroll-behavior: smooth;
+    transition: .4s linear;
+}
+
+.menubar{
+    background: rgb(238, 47, 85);
+    overflow: auto;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+}
+
+.logo{
+    width: 30%;
+    text-align: center;
+    margin-top: 15px;
+    float: left;
+    
+}
+.logo a{
+    color: white;
+}
+
+.menu-items{
+    float: left;
+    width: 60%;
+}
+.menu-items li{
+    float: left;
+    margin: 5px 35px;
+    padding: 10px;
+    display: block;
+}
+.menu-items a{
+    color: white;
+    cursor: pointer;
+}
+
+.menuBtn{
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    float: right;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    display: none;
+    z-index: 5;
+    /* border: 1px solid black; */
+    transition: 0s linear;
+}
+
+.menuBtn::before, .menuBtn::after{
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 4px;
+    content: ' ';
+    position: absolute;
+    display: flex;
+}
+.menuBtn::before{
+    transform: translateY(-7px);
+}
+.menuBtn::after{
+    transform: translateY(7px);
+}
+.close{
+    transform: translateX(-50px);
+    background: transparent;
+}
+.close::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.close::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+.home{
+    position: relative;
+    text-shadow: black;
+}
+.home img{
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    }
+.home h1{
+    width: 20%;
+    top: 20%;
+    position: absolute;
+    margin-left: 5%;
+    font-size: 50px;
+    color: white;
+    
+}
+.home p{
+    top: 42%;
+    width: 30%;
+    position: absolute;
+    margin-left: 5%;
+    color: white;
+}
+.home button{
+    border: none;
+    top: 55%;
+    margin-left: -95%;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(238, 47, 85);
+    color: white;
+}
+.home button:hover, .contact button:hover{
+    
+    background: burlywood;
+    color: black;
+    transform: scale(1.1,1.1);
+    transition: all .2s ease-in-out;
+}
+
+.about{
+    margin: 0;
+    position: relative;
+    height: 600px;
+    overflow: auto;
+    background: rgb(231, 135, 153);
+    color: white;
+}
+.about-left{
+    margin: 3% 5%;
+    width: 40%;
+    float: left;
+}
+.about-right{
+    margin: 3% 5%;
+    width: 40%;
+    float: left;
+}
+
+.about-img{
+    clear: both;
+    overflow: auto;
+    
+}
+.img-left{
+    
+    /* border: 1px solid black; */
+    width: 30%;
+    margin: 35px 15px;
+    float: left;
+}
+.img-hvr{
+    padding: 0px 25px;
+    margin-left: 25px;
+}
+.img-hvr:hover{
+    transform: scale(1.1,1.1);
+    transition: all .4s ease-in-out;
+}
+
+.contact{
+    background: rgb(231, 135, 153);
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about > h1, .contact h1{
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+.contact form{
+    background: transparent;
+    margin: 40px;
+    width: 40vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact form input, textarea{
+    margin: 10px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+::placeholder{
+    color: rgb(34, 32, 28);
+    font-size: medium;
+}
+.contact button{
+    border: none;
+    padding: 10px 88px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(238, 47, 85);
+    color: white;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+@media (max-width: 768px){
+    .logo{
+        margin-top: 15px;
+        margin-left: -40px;        
+    }
+    .menu-items li{
+        margin: 5px 10px 5px 15px;
+        padding: 10px 15px;
+    }
+
+    .home img{
+        height: 500px;
+    }
+    .home h1, .home p{
+        margin-left: 7%;
+        text-align: center;
+        width: 85%;
+    }
+    .home button{
+        margin-left: -60%;
+    }
+
+    .about{
+        height: 1000px;
+    }
+    .about-left, .about-right, .img-left{
+        margin: 0px;
+        padding: 10px;
+        /* border: 1px solid black; */
+        width: 100%;
+        text-align: center;
+        }
+
+}
+
+@media (max-width: 480px){
+    .menubar{
+        height: auto;
+    }
+    .logo {
+        width: 60%;
+        height: 35px;
+        text-align: center;
+    }
+    .menu-items{
+        width: 100%;
+    }
+    .menu-items li{
+        float: none;
+        width: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        /* position: fixed; */
+        top: 30px;
+        
+    }
+    /* .menu-items{
+        visibility: visible;
+        width: 27px;
+        height: 30px;
+        background-image: url('images/bar.png');
+        float: left;
+        background-size: 25px 30px;
+        margin-left: 60px;
+        margin-top: 9px;
+    } */
+    
+    .menuBtn, .menuBtn::before, .menuBtn::after{
+        display: block;
+    }
+    .show{
+        background: rgb(233, 79, 110);
+        transition: .4s linear;
+        
+    }
+    .show li{
+        display: flex;
+    }
+
+
+    .home img{
+        height: 400px;
+    }
+    .home h1{
+        font-size: 25px;   
+        top: 30%;
+    }
+    .home p{
+        font-size: 11px;
+        top: 43%;
+    }
+    .home button{
+        top: 60%;
+    }
+
+    .about-left{
+        padding: 5px;
+    }
+    .about h1{
+        font-size: 35px;
+    }
+    .about-right{
+        padding: 5px;
+        font-size: 11px;
+    }
+    .about img{
+        padding: 0;
+        margin: 0;
+        width: 70%;
+    }
+    .contact form{
+        width: 80%;
+    }
+    .contact button {
+        padding: 5px 10px;
+        font-size: small
+    };
+}
